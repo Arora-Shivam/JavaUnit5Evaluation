@@ -1,0 +1,26 @@
+3NF(Third Normal Form)
+For table to be in 3NF-
+*Table Relation must be in 2NF
+*If there is a transitive dependency of non-prime attribute on super key then it must be removed.
+
+Table-
+
+Employee(Emp_Id,Name,Salary,Zip,City,State,Country);
+
+Super key-{Emp_id},{Emp_id,Name},{Emp_Id,Salary}...so on
+Candidate key-Emp_Id;
+
+Prime-Attributes-{Emp_Id}
+Non-Prime Attribute-Name,Salary,Zip,City,State,Country
+
+Dependency=>
+City->Zip
+Zip->Emp_Id
+
+=>There is a transitive dependency b/w non-prime(City) and Emp_id(Super Key) so it must be removed.
+
+
+Normalized Table-
+
+Employee(Emp_Id,Name,Salary,Zip);
+Employee_Address(Address_id,State,Country,Emp_id(FK)); 

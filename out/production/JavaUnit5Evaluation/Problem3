@@ -1,0 +1,8 @@
+Transaction is a group of statement performed as a single statement.
+
+Transaction must be atomic,consistent,isolated,durable(ACID).
+
+Atomic-If all transaction are valid only then it will be successfull even if one is invalid transaction will be failed.
+Consistent-Only if transaction successful Database will change state
+Isolated-One transaction isolated from other to maintain consistency.
+Durable-Once transaction is done it shoul remain in database.
