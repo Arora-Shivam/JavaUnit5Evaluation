@@ -86,7 +86,17 @@ enum MembershipStatus{
 class ReadBook{
     LibraryMember libraryMember;
 
-    public void readBook(){
-        
+    public Books readBook(Books book){
+        if(libraryMember.status!=MembershipStatus.EXIST){
+            throw new RuntimeException("You are not a member");
+        }
+        if(libraryMember.status == MembershipStatus.EXIST && libraryMember.booksBorrowed==0){
+            libraryMember.booksBorrowed=1;
+            return new DataBase().searchBook(book);
+
+        }
+        else{
+            throw new RuntimeException("You have already borrowed one book");
+        }
     }
 }
